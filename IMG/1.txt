@@ -1,0 +1,85 @@
+html
+
+
+<html lang="en-US">
+<head>
+<title>Just a moment...</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+<meta content="noindex,nofollow" name="robots"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="/cdn-cgi/styles/challenges.css" rel="stylesheet"/>
+</head>
+<body class="no-js">
+<div class="main-wrapper" role="main">
+<div class="main-content">
+<noscript>
+<div id="challenge-error-title">
+<div class="h2">
+<span class="icon-wrapper">
+<div class="heading-icon warning-icon"></div>
+</span>
+<span id="challenge-error-text">
+                        Enable JavaScript and cookies to continue
+                    </span>
+</div>
+</div>
+</noscript>
+<div id="trk_jschal_js" style="display:none;background-image:url('/cdn-cgi/images/trace/managed/nojs/transparent.gif?ray=7bfde70709a2078f')"></div>
+<form action="/truyen-tranh/vo-luyen-dinh-phong/chap-1/361803?__cf_chl_f_tk=MGEH7WHXUkuZw7.L6.TZRdQDObT7vi7YdXJcdjUo2Fg-1682837971-0-gaNycGzNCuU" enctype="application/x-www-form-urlencoded" id="challenge-form" method="POST">
+<input name="md" type="hidden" value="rWNEIrhadavK1rzmdgLakeSma1yQ6wmzo58Wb12tZnY-1682837971-0-AXoEamFdGKjxnQkJ1bU9uv9qeCE-hl0xcs7S4AD5kQvCfvuuJO4XlB4Clca5BwumolMNIhOz-beiXN7JSr_yYLegT-_v21uJuVj9Q2W1XXV8gcj2XPiOXaWiBSfFawhvTpET2NPoHTkR3LgdC0G6wbuWHk4eCKsdPsVpxtzTlT0hSQYobNuQZMupMTYb6-fiZXDwaemE9DssnE71JZJGw6G8u5ZncFRi98VGkJGpYPZkg5dulcNahpCnV5v23pUOzbC63Cv418sYHvq0aJ3NW4UvgSSTrjd931eQPHgiWGbLEMAtfjG2vY-DylGzsBdR3wt5gDHRAbu9Du-i1DU3NI-aRdEBxThlT9nozp4JopNYSZueEyy5p8VXxtEyKkZqmBiyluU93J8A0-YJEOrWurbUpQsOkE4Vr9aYCujj9mrY1ZDcm3n0jMNX2yfa0jBAnmfsKMvLDuTtrjvX9jFGMXckoL4VW000tIdBalo8i3JSzumwcIpmAtgQxcOZWKxDoVTcDxsnAp78r0202ajyay41k-9X8jsfDFvX-OrbOEsX1b3nzDKvuGI-KggmWM-1Hh6zU8aTYgCslLhwKSK8MkNRPeqaIPSDzqlNvyQnDsHyB1bQqGBc4QTvuBWTX7Xwnr71t7FHC1swQjI2NGpPcGLvcalArXVAHOMWDOsUa_u78m4Fq2Cl_-nNVCfWHf7mNb0e11o47pmkXa8k8d32qqQ37nXnb1XzyJFFLCpiFjfnzaiD6Y3NyZfx-1JAPPiabJFMnB2UAaBBTnE0H19TqEAnUfylDQFf4IOyRqv1TXo7Ab8Q5k4A5-dlRauAPRgga23XRTQU-8T2IyASquSX6rORt0Q-SWft6JeKd6FgwfSf559UkFwNwAlpMaX8CsPaNr5C40S7Ccx00liXJ53q2uQvmbjSRRSJ29oczc9P7ahQIUhETZ16OzczlWi_IMrEOkSYVRhDEoM1no-vxAafRG0UhNH1_C5JB8ze3PucZPaW6o7Jh-pR8g2WONDZh2PRS7Mz_rC4mUDEKgkVl-fxPiUkJpeiNnRPECiPaefKT7_zQKR5spSfwaFivDIA_QAKlBmsx2jSfH5rUV79-JQQJFSyHGDACr1QYpzGKmwxrruZ2_0t_fH9dGbRR-Tz8y79RBEld80H6MaKShc0AeGdS0bUitY5DkaOgoikPgnq6BiKMd02jZtWkI02RT0vJSSHavXP-WfkpBVbTMpv1NbSwIx1H3WoL5ffobA3Im0BphhoMegc0XfS5OSqST21XO69k43jCJ_roXfFgl6YFeRQpmheZLbvLSpcCeAXC3BzW9V-Bbcc8ri5odghenslVoRC_A7cDw282khGImqOo1IqH4trQ0AhP5mR77XcHg4vRwqcn3pEEJxrMIv-hASQcGYcU0zGk5lT2SQ1Ay6bwtv1ImWCi2S-KOD2IpEttcW6UpQvVA_hoZvyHWourGmMEgUyOnGUJ3zpV2G7Rof_JJQcOdWX5spVZLNUrZNahBfN7LMFQJwD4ttezUq6TPvm5rzv3XNollYANm3jg9I7PZPqhLnvoichwU1Sq4mzlEKAOG3oXmD7tpCkiq8id0RE-F2XIgZheSSAUXlpQnFpJMXZoyE0h62t8Q2kccfvZN9t3cy9oJSlh6meE81XNEKPCpDqmIqQ3xpGEtk0AAiEZU9cuId9_nD185RpMLr1YERNhQOWSqljFL-cObS8KrTV2I7fIdi6yxPxTaN86dRqaAU5z7V7Qx8MB4lp9mdpp8BiLfl0gt2RAwu7qHKyjP05W7vaHWpFrBuNaYGOEH1yjeYpHoUyJOICx0AyV5f0y6NUbx5_wnNhqU-PSwGbGMVhEesURuBg9jNx5dow42NL3dIXlh4NJcQsgMvVfU2OVO2B4JItS4-A-ZfXX1bc4RnPJZ_BAG_CbHdLdNbMIEsL_XmXqfYzbMX20qVQrWRQlw_vHzwu05eQX2sdGkjeOqx25SR9pSpZ98jQ7gIFb96jZBqOA8t0LiomvlVlPN_Dq7Llc22HCMwMYlc3ZsoWoLBy-WyFi981p0osmEqniHV_5p4KTAErRrMTFggYNGaW4GzUW3MRApQSq8ypUrl64ziFxyWaiI9Kdqc72hQyqC1m56MI-RUJupVks-Zn2p-SwRLWJA1y0GPdUoAlbMIsrTPlOHlbiY6C74Py0QQX29E5SBr4X472UPAW10sOJY5-OkVNQef-Q8Iqq_wK7F4eCihaQDMQXZO-CF265QWEKWmwHEAssfDCfTj8IXjaGDfc7maLoKJ4WihWFQk5W5xlV4fnoKH_WZLYWDSWBES_GoF789l8h_vxpgzsztwuvYk6269GpNUPJELupUmxuxsvy45ewc0U_Bnz-n93zGxeII4_P9s0VidtZ4raWRf6ew653GyNl7OE6aV3u7V_Hl_abuN_oMCaCQLpf9Sk6YhmBaadNWc-YKsZEype912u3csCltjbKwm6zdq_yhv8VaLNrfI3-ylJ1JonufhvtDPKE_d_odvH8C5PjGqxeM9-cE8rtF5-vINmDljdfb64N5339UqPA5nzD8JXWrUDc6B2eVbrychIHM4F3SnugrBHMyGwLGt0RfcQj5b3f6LVKhTLB8PgXMMu9NgPSEuoeNRWBVvTcsWjB06UwvPnsRPmlEO2eD8rDwy6iQ-xY5Epylvvix6xzOT0l7jxc59rBf4nPY9BcC8VYEIexzmctMTUIIDoMQHehaPh"/>
+</form>
+</div>
+</div>
+<script>
+    (function(){
+        window._cf_chl_opt={
+            cvId: '2',
+            cZone: 'www.nettruyenplus.com',
+            cType: 'managed',
+            cNounce: '75135',
+            cRay: '7bfde70709a2078f',
+            cHash: 'a74320b626228b6',
+            cUPMDTk: "\/truyen-tranh\/vo-luyen-dinh-phong\/chap-1\/361803?__cf_chl_tk=MGEH7WHXUkuZw7.L6.TZRdQDObT7vi7YdXJcdjUo2Fg-1682837971-0-gaNycGzNCuU",
+            cFPWv: 'g',
+            cTTimeMs: '1000',
+            cMTimeMs: '0',
+            cTplV: 5,
+            cTplB: 'cf',
+            cK: "",
+            cRq: {
+                ru: 'aHR0cHM6Ly93d3cubmV0dHJ1eWVucGx1cy5jb20vdHJ1eWVuLXRyYW5oL3ZvLWx1eWVuLWRpbmgtcGhvbmcvY2hhcC0xLzM2MTgwMw==',
+                ra: 'cHl0aG9uLXJlcXVlc3RzLzIuMjkuMA==',
+                rm: 'R0VU',
+                d: 'qkUwSXZY73GdZpfQh1whmMM3C8Me6bwjIKQEC6Irnkiif+jxBM36ZGETYM7c6mWdQc4lp/7QeUpioPRj6m+W67CLfODOnVg8YmXiqLd9XAmfGCzl9Jgy0tmBfm/QVj5L6PiD6WfGLlGmMk2spRL45C7+a56YW5yDd1+2eP0DmLgssKFuyByb7YwUFo7FzBDJCn6Kc27aSKgBQS7ERc7qhBGvsdZ11Zqh+mBHdPaHQg58oCVxTA5KozrZtN0K2BFvsUTrfUNXuzRjZ94NAn1M/uFPpm0rBOrWTzaGa2BAQqYzQyZmoIxiHCom3P0QtG9CUd5f5Yi0hw6HGjL1ksuTEpK738SPrFpEmtb9hxD2IQujisBjMPMInMQpHpb3Z0OS8PCitCYethTi+Ut2l3s6Ocn1n6c7sG7KZtQBPeAOhRKmaPyo1cv89bnUgONMuEZ6ukSlKJ1hPb3QTSXsQhVKwILlUcb59voTzh4KDOm8aSmVz0u3Mf0J96lCSfHe2/tdZ3LgVonLjRL0SiVbAkdboqLg2rJTmhLpUeeBRaj5mIRD+lvmQ9e0C50xyf+nHerrWy4VjmXFJbm68rF+zqAwjZ1clZJA91KpkWpRWludYkfTYAEI1Qk9kPtVN+IgF+MF',
+                t: 'MTY4MjgzNzk3MS4wNDcwMDA=',
+                m: 'SpByd9AtPeNTtCwapb4YI8IHkLIz9x1+UiRRNzx4T3I=',
+                i1: '4ppa8Hb0/L3H5A7GXrYndA==',
+                i2: '5ps8N/mrxv3BlTdZOghtlw==',
+                zh: 'kx3Ym6fuu9MU3Xm4Ti4qpfQVqbTOi280B0SQx6Gz1JQ=',
+                uh: 'Od70nCNhY4yhL+v1mbxHDnfPDPBdcyszwxY2jRi3wd0=',
+                hh: 'pMI1kiZvba3CM9fQyMxkgEHEQhmmV0KjgY3Ex3Tw42A=',
+            }
+        };
+        var trkjs = document.createElement('img');
+        trkjs.setAttribute('src', '/cdn-cgi/images/trace/managed/js/transparent.gif?ray=7bfde70709a2078f');
+        trkjs.setAttribute('alt', '');
+        trkjs.setAttribute('style', 'display: none');
+        document.body.appendChild(trkjs);
+        var cpo = document.createElement('script');
+        cpo.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/managed/v1?ray=7bfde70709a2078f';
+        window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;
+        window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;
+        if (window.history && window.history.replaceState) {
+            var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;
+            history.replaceState(null, null, "\/truyen-tranh\/vo-luyen-dinh-phong\/chap-1\/361803?__cf_chl_rt_tk=MGEH7WHXUkuZw7.L6.TZRdQDObT7vi7YdXJcdjUo2Fg-1682837971-0-gaNycGzNCuU" + window._cf_chl_opt.cOgUHash);
+            cpo.onload = function() {
+                history.replaceState(null, null, ogU);
+            };
+        }
+        document.getElementsByTagName('head')[0].appendChild(cpo);
+    }());
+</script>
+</body>
+</html>
+
