@@ -11,7 +11,7 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers =   {
                 'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenplus.com/'
+                'Referer': 'https://www.nettruyenmax.com/'
             }
 
 url="https://www.nettruyenmax.com/truyen-tranh/dai-phung-da-canh-nhan-556590"
@@ -21,7 +21,7 @@ areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 
 sleep(1)
 
-path = 'E:\T\TTr/Đại Phụng Đả Canh Nhân'
+path = 'E:\T\TTr\Đại Phụng Đả Canh Nhân'
 if not os.path.exists(path):
     os.makedirs(path)
 
@@ -76,7 +76,6 @@ for chap in data:
 
     if not os.path.exists(chap_path):
         os.makedirs(chap_path)
-        sleep(0.5)
 
     for idx, img_link in enumerate(chap_imgs, 1):
         

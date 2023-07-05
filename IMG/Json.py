@@ -11,7 +11,7 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers =   {
                 'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenplus.com/'
+                'Referer': 'https://www.nettruyenmax.com/'
             }
 
 url=input("Link Truyện: ", )
@@ -19,9 +19,11 @@ url=input("Link Truyện: ", )
 response=scraper.get(url, headers=headers)
 soup=BeautifulSoup(response.text, "html.parser") 
 
+comic_name=soup.find('h1', {'class':'title-detail'}).text
+
 areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 
-sleep(1)
+sleep(0.5)
 
 chap_links = []
 
@@ -49,7 +51,7 @@ for area in areas:
 
         data["image_links"].extend([img['src'] for img in chap_imgs])
 
-    with open('data.json', 'a', encoding='utf-8') as f:
+    with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False)
         f.write('\n')
     
