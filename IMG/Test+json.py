@@ -14,19 +14,19 @@ headers =   {
                 'Referer': 'https://www.nettruyenmax.com/'
             }
 
-url="https://www.nettruyenmax.com/truyen-tranh/dai-phung-da-canh-nhan-556590"
+url="https://www.nettruyenmax.com/truyen-tranh/vu-xuyen-vat-ngu-89520"
 response=scraper.get(url, headers=headers)
 soup=BeautifulSoup(response.text, "html.parser") 
 areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 
 sleep(1)
 
-path = 'E:\T\TTr\Đại Phụng Đả Canh Nhân'
+path = 'E:\T\TTr\Vũ Xuyên Vật Ngữ'
 if not os.path.exists(path):
     os.makedirs(path)
 
 chap_links = []
-for i in range(190,192):
+for i in range(1):
     area = areas[i]
     link=area.find('a')
     chap_links.append(link['href'])
@@ -59,12 +59,12 @@ for i in range(190,192):
         data["image_links"].extend([img['src'] for img in chap_imgs])
 
     # Thêm dữ liệu vào file JSON
-    with open('data.json', 'a', encoding='utf-8') as f:
+    with open('data1.json', 'a', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False)
         f.write('\n')
 
 # Đọc dữ liệu từ file JSON
-with open('data.json', 'r', encoding='utf-8') as f:
+with open('data1.json', 'r', encoding='utf-8') as f:
     data = [json.loads(line) for line in f]
 
 visited_links = set()   # Khởi tạo danh sách các link đã được tải
