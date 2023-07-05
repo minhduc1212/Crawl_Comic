@@ -25,8 +25,7 @@ sleep(1)
 
 chap_links = []
 
-for i in range(190,192):
-    area = areas[i]
+for area in areas:
     link=area.find('a')
     chap_links.append(link['href'])
 
