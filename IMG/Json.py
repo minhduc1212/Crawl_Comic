@@ -26,7 +26,7 @@ areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 sleep(0.5)
 
 chap_links = []
-
+data=[]
 for area in areas:
     link=area.find('a')
     chap_links.append(link['href'])
@@ -36,7 +36,7 @@ for area in areas:
     chap_name = re.sub(r'[\\/:*?"<>|]', ' ', chap_name)
     chap_names.append(chap_name)
 
-    data = {
+    data_one = {
         "chapter_name": chap_name,
         "image_links": []
             }
@@ -49,9 +49,10 @@ for area in areas:
 
         sleep(0.5)
 
-        data["image_links"].extend([img['src'] for img in chap_imgs])
+        data_one["image_links"].extend([img.get('src') for img in chap_imgs])
 
-    with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False)
-        f.write('\n')
+    data.append(data_one)
+
+with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
+    json.dump(data,f)
     
