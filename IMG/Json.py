@@ -27,9 +27,9 @@ sleep(0.5)
 
 chap_links = []
 chap_names = []
-data = []
+#data = []
 
-for area in areas:
+for i, area in enumerate(areas):
     link=area.find('a')
     chap_links.append(link['href'])
 
@@ -51,10 +51,14 @@ for area in areas:
         sleep(0.5)
         
         data_one["image_links"].extend([img.get('src') for img in chap_imgs])      
-    data.append(data_one)
+    #data.append(data_one)
 
-with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
-    json.dump(data_one,f)
+    with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
+        json.dump(data_one,f)
+        f.write('\n')
+
+    print("Đã lấy xong dữ liệu của Chapter {}.".format(i+1))
+
 
 
     

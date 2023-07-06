@@ -1,26 +1,10 @@
-from bs4 import BeautifulSoup
-import cloudscraper
-import os
-from time import sleep
-from fake_useragent import UserAgent
-from urllib.parse import urljoin
-import re
 import json
+data = []
 
-scraper = cloudscraper.create_scraper()
-ua = UserAgent()
-headers =   {
-                'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenmax.com/'
-            }
+with open('Kingdom - Vương Giả Thiên Hạ.json', 'r', encoding='utf-8') as f:
+    for line in f:
+        data_one = json.loads(line)
+        data.append(data_one)
 
-url=input("Link Truyện: ", )
-
-response=scraper.get(url, headers=headers)
-soup=BeautifulSoup(response.text, "html.parser") 
-
-comic_name=soup.find('h1', {'class':'title-detail'}).text
-
-sleep(0.5)
-with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
-        f.write("sssss")
+    with open('Kingdom - Vương Giả Thiên Hạ_list.json', 'a', encoding='utf-8') as s:
+        json.dump(data_one,s)
