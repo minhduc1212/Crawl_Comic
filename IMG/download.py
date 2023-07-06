@@ -40,14 +40,16 @@ for record in data:
     if not os.path.exists(chap_path):
         os.makedirs(chap_path)
 
+    img_count=1
     for img_link in chap_imgs:
                 
         img_link_fix=urljoin(url, img_link)
 
         response_img=scraper.get(img_link_fix, headers=headers)
 
-        filename = img_link_fix.split('/')[-1].split('?')[0] 
+        filename =f'{img_count:03}.jpg'
    
         with open(os.path.join(chap_path, filename), 'wb') as f:
             f.write(response_img.content)
+        img_count += 1
         sleep(0.5)
