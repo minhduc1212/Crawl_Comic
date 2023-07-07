@@ -25,39 +25,37 @@ areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 
 sleep(0.5)
 
-chap_links = []
-chap_names = []
-#data = []
 
-for i, area in enumerate(areas):
-    link=area.find('a')
-    chap_links.append(link['href'])
 
-    chap_name=area.get_text().strip()
-    chap_name = re.sub(r'[\\/:*?"<>|]', ' ', chap_name)
-    chap_names.append(chap_name)
-    
-    data_one = {
-        "chapter_name": chap_name,
-        "image_links": []
-            }
+with open('{}.json'.format(comic_name), 'w', encoding='utf-8') as f:
+    for i, area in enumerate(areas):
+        link=area.find('a')
 
-    for chap_link in chap_links:
-        chap_response=scraper.get(chap_link, headers=headers)
-        chap_soup=BeautifulSoup(chap_response.text, "html.parser")
-        chap_imgs_div=chap_soup.find('div', {'class':'reading-detail box_doc'})
-        chap_imgs=chap_imgs_div.find_all('img')
+        chap_name=area.get_text().strip()
+        chap_name = re.sub(r'[\\/:*?"<>|]', ' ', chap_name)
+        chap_names = []
+        chap_names.append(chap_name)
 
-        sleep(0.5)
-        
-        data_one["image_links"].extend([img.get('src') for img in chap_imgs])      
-    #data.append(data_one)
+        data_one = {
+            "chapter_name": chap_name,
+            "image_links": []
+                }
 
-    with open('{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
+        chap_links = []
+        chap_links.append(link['href'])
+        for chap_link in chap_links:
+            chap_response=scraper.get(chap_link, headers=headers)
+            chap_soup=BeautifulSoup(chap_response.text, "html.parser")
+            chap_imgs_div=chap_soup.find('div', {'class':'reading-detail box_doc'})
+            chap_imgs=chap_imgs_div.find_all('img')
+
+            sleep(0.5)
+                
+            data_one["image_links"].extend([img.get('src') for img in chap_imgs])      
         json.dump(data_one,f)
-        f.write('\n')
+        f.write('\n') 
 
-    print("Đã lấy xong dữ liệu của Chapter {}.".format(i+1))
+        print("Đã lấy xong dữ liệu của Chapter {}.".format(i+1))
 
 
 
