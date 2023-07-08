@@ -56,7 +56,7 @@ with open('{}.json'.format(comic_name), 'w', encoding='utf-8') as f:
         json.dump(data_one,f)
         f.write('\n') 
 
-        print("Đã lấy xong dữ liệu của Chapter {}.".format(i+1))
+        print("Đã lấy xong dữ liệu của {}".format(chap_name))
 
 
 
