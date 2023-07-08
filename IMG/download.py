@@ -20,6 +20,7 @@ response=scraper.get(url, headers=headers)
 soup=BeautifulSoup(response.text, "html.parser") 
     
 comic_name=soup.find('h1', {'class':'title-detail'}).text  
+comic_name = re.sub(r'[\\/:*?"<>|]', ' ', comic_name)
 
 sleep(0.5)
 
