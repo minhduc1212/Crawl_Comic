@@ -36,6 +36,7 @@ with open('{}.json'.format(comic_name), 'r') as f:
 for record in data:
     chap_imgs = record['image_links']
     chap_name = record['chapter_name']
+    chap_name = re.sub(r'[\\/:*?"<>|]', ' ', chap_name)
 
     chap_path = os.path.join(os.path.join(path, comic_name), chap_name)
     if not os.path.exists(chap_path):

@@ -14,10 +14,10 @@ headers = {
     'User-Agent': ua.random,
     'Referer': 'https://www.nettruyenmax.com/'
 }
-url = "https://www.nettruyenmax.com/tim-truyen-nang-cao?genres=&notgenres=&gender=-1&status=-1&minchapter=1&sort=15&page={}"
+url = "https://www.nettruyenmax.com/?page={}"
 
 with open('all_comics_links.json', 'w', encoding='utf-8') as f:
-    for i in range(1, 513):
+    for i in range(1, 596):
         # Tạo đường dẫn của trang tiếp theo
         next_url = url.format(i)
         response = scraper.get(next_url, headers=headers)
