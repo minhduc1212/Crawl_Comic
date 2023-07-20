@@ -53,7 +53,7 @@ with open('{}.json'.format(comic_name), 'w', encoding='utf-8') as f:
             sleep(0.5)
                 
             data_one["image_links"].extend([img.get('src') for img in chap_imgs])      
-        json.dump(data_one,f)
+        json.dump(data_one,f, ensure_ascii=False)
         f.write('\n') 
 
         print("Đã lấy xong dữ liệu của {}".format(chap_name))
