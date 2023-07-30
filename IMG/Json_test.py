@@ -22,13 +22,19 @@ for comic in comics :
     comic_name = re.sub(r'[\\/:*?"<>|]', ' ', comic_name)
 
     comic_link=comic['comic_link']
+
+    file_path = os.path.join('E:/LT/Crawl (Python)/Data', f'{comic_name}.json')
+    if os.path.exists(file_path):
+        print(f'{comic_name} đã được lưu trữ, bỏ qua')
+        continue
+
     response=scraper.get(comic_link, headers=headers)
     soup=BeautifulSoup(response.text, "html.parser") 
     areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 
     sleep(0.5)
 
-    with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'a', encoding='utf-8') as f:
+    with open(file_path, 'a', encoding='utf-8') as f:
         for i, area in enumerate(areas):
             link=area.find('a')
 
