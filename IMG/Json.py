@@ -26,8 +26,6 @@ areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
 
 sleep(0.5)
 
-
-
 with open('{}.json'.format(comic_name), 'w', encoding='utf-8') as f:
     for i, area in enumerate(areas):
         link=area.find('a')
