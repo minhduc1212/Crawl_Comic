@@ -30,7 +30,7 @@ if not os.path.exists(path):
 if not os.path.exists(os.path.join(path, comic_name)):
     os.makedirs(os.path.join(path, comic_name))
 
-with open('{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
+with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 for record in data:

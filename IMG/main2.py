@@ -24,11 +24,11 @@ path = 'D:\T (Part D)\Đại Phụng Đả Canh Nhân'
 if not os.path.exists(path):
     os.makedirs(path)
 
-chap_links = []
 for i in range(1):
+    #chap_links = []
     area = areas[i]
     link=area.find('a')
-    chap_links.append(link['href'])
+    #chap_links.append(link['href'])
 
     chap_names = []
     chap_name=area.get_text().strip()
@@ -40,8 +40,8 @@ for i in range(1):
         os.makedirs(chap_path)
         sleep(0.5)
 
-    for chap_link in chap_links:
-        chap_response=scraper.get(chap_link, headers=headers)
+    #for chap_link in chap_links:
+        chap_response=scraper.get(link, headers=headers)
         chap_soup=BeautifulSoup(chap_response.text, "html.parser")
         chap_imgs_div=chap_soup.find('div', {'class':'reading-detail box_doc'})
         chap_imgs=chap_imgs_div.find_all('img')

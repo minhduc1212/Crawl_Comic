@@ -32,3 +32,4 @@ with open('all_comics_links.json', 'w', encoding='utf-8') as f:
             json.dump(comic, f, ensure_ascii=False)
             f.write('\n')
         print("Đã lấy xong dữ liệu của trang {}".format(i))
+
