@@ -64,8 +64,8 @@ def download_comic():
         messagebox.showinfo("Download Complete", "Comic downloaded successfully!")
 
     # Create a new thread for downloading
-    download_thread = threading.Thread(target=download_thread)
-    download_thread.start()
+    download= threading.Thread(target=download_thread)
+    download.start()
 
 # Create main window
 window = Tk()

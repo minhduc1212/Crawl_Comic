@@ -40,7 +40,7 @@ for area in areas:
 
     chap_dict[chap_name] = chap_link
 
-with open('{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
+with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
     datas = json.load(f)
 
 chapter_names=[]
@@ -65,5 +65,5 @@ for chap_name, chap_link in chap_dict.items():
 
         datas.append(data_one)
 
-with open('{}.json'.format(comic_name), 'w', encoding='utf-8') as f:
+with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'w', encoding='utf-8') as f:
     json.dump(datas, f, ensure_ascii=False)
