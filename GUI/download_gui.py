@@ -10,7 +10,7 @@ import json
 import threading
 
 def download_comic():
-    def download_thread():
+    def download():
         url = link_entry.get()
         path = path_entry.get()
 
@@ -37,7 +37,7 @@ def download_comic():
         with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        for record in data:
+        def download_img(record) :
             chap_imgs = record['image_links']
             chap_name = record['chapter_name']
             chap_name = re.sub(r'[\/:*?"<>|]', ' ', chap_name)
@@ -61,11 +61,20 @@ def download_comic():
             message_label.config(text="Đã tải xong " + chap_name) 
             sleep(0.5)
 
+        download_img_threads=[]
+        for record in data:
+            download_img_thread=threading.Thread(target=download_img, args=(record))
+            download_img_threads.append(download_img_thread)
+            download_img_thread.start()
+        
+        for download_img_thread in download_img_threads:
+            download_img_thread.join()
+
         messagebox.showinfo("Download Complete", "Comic downloaded successfully!")
 
-    # Create a new thread for downloading
-    download= threading.Thread(target=download_thread)
-    download.start()
+    download_thread = threading.Thread(target=download)
+    download_thread.start()
+    download_thread.join()
 
 # Create main window
 window = Tk()

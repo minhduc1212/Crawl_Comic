@@ -1,14 +1,14 @@
 from bs4 import BeautifulSoup
 import cloudscraper
 import os
-from time import sleep
+import time
 from fake_useragent import UserAgent
 from urllib.parse import urljoin    
 import re
 import json
 import threading
 
-def download():    
+def download():
     scraper = cloudscraper.create_scraper()
     ua = UserAgent()
     headers =   {
@@ -16,7 +16,7 @@ def download():
                     'Referer': 'https://www.nettruyenmax.com/'
                 }
 
-    url=input("Link Truyện: ", )
+    url=input("link Truyện : ", )
 
     response=scraper.get(url, headers=headers)
     soup=BeautifulSoup(response.text, "html.parser") 
@@ -24,9 +24,10 @@ def download():
     comic_name=soup.find('h1', {'class':'title-detail'}).text  
     comic_name = re.sub(r'[\/:*?"<>|]', ' ', comic_name)
 
-    sleep(0.5)
+    time.sleep(0.5)
 
     path = input("Vị Trí Tải Truyện: ",)
+
     if not os.path.exists(path):
         os.makedirs(path)
     if not os.path.exists(os.path.join(path, comic_name)):
@@ -35,7 +36,7 @@ def download():
     with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    for record in data:
+    def download_images(record):
         chap_imgs = record['image_links']
         chap_name = record['chapter_name']
         chap_name = re.sub(r'[\/:*?"<>|]', ' ', chap_name)
@@ -45,22 +46,34 @@ def download():
         if not os.path.exists(chap_path):
             os.makedirs(chap_path)
 
-        img_count=1
+        img_count = 1
         for img_link in chap_imgs:
-                    
-            img_link_fix=urljoin(url, img_link)
+            img_link_fix = urljoin(url, img_link)
 
-            response_img=scraper.get(img_link_fix, headers=headers)
+            response_img = scraper.get(img_link_fix, headers=headers)
 
-            filename =f'{img_count:03}.jpg'
-    
+            filename = f'{img_count:03}.jpg'
+
             with open(os.path.join(chap_path, filename), 'wb') as f:
                 f.write(response_img.content)
             img_count += 1
-        print("Đã tải xong ", chap_name)
-        sleep(0.5)
 
-thread=threading.Thread(target=download)
+        print("Đã tải xong", chap_name)
+        time.sleep(0.5)
 
-thread.start()
-thread.join()
+    threads = []
+    for record in data:
+        thread = threading.Thread(target=download_images, args=(record,))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+start_time=time.time()
+
+download_thread=threading.Thread(target=download)
+download_thread.start()
+download_thread.join()
+
+end_time = time.time()
+print(f"Thời gian load: {end_time - start_time} giây")
