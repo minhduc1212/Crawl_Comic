@@ -4,7 +4,7 @@ import cloudscraper
 import os
 from time import sleep
 from fake_useragent import UserAgent
-from urllib.parse import urljoin    
+from urllib.parse import urljoin
 import re
 import json
 import threading
@@ -15,20 +15,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-def download():
+def download(url, path):
     scraper = cloudscraper.create_scraper()
     ua = UserAgent()
     headers = {
         'User-Agent': ua.random,
         'Referer': 'https://www.nettruyenmax.com/'
-                }
-
-    url = request.form.get('url')
-    path = request.form.get('path')
+    }
 
     response = scraper.get(url, headers=headers)
     soup = BeautifulSoup(response.text, "html.parser") 
-        
+    
     comic_name = soup.find('h1', {'class':'title-detail'}).text  
     comic_name = re.sub(r'[\/:*?"<>|]', ' ', comic_name)
 
@@ -42,7 +39,7 @@ def download():
     with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    for record in data:
+    def download_images(record):
         chap_imgs = record['image_links']
         chap_name = record['chapter_name']
         chap_name = re.sub(r'[\/:*?"<>|]', ' ', chap_name)
@@ -63,15 +60,28 @@ def download():
             with open(os.path.join(chap_path, filename), 'wb') as f:
                 f.write(response_img.content)
             img_count += 1
+
         print("Đã tải xong", chap_name)
         sleep(0.5)
-        
+
+    threads = []
+    for record in data:
+        thread = threading.Thread(target=download_images, args=(record,))
+        threads.append(thread)
+        thread.start()
+
+    for thread in threads:
+        thread.join()
+
 @app.route('/download', methods=['POST'])
 def download_thread():
-    download = threading.Thread(target=download)
-    download.start()
+    url = request.form.get('url')
+    path = request.form.get('path')
+    download_thread = threading.Thread(target=download, args=(url, path))
+    download_thread.start()
+    download_thread.join()
 
     return render_template('download.html')
 
 if __name__ == '__main__':
-    app.run(port=8081)
+    app.run(port=8088)

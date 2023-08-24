@@ -63,7 +63,7 @@ def download_comic():
 
         download_img_threads=[]
         for record in data:
-            download_img_thread=threading.Thread(target=download_img, args=(record))
+            download_img_thread=threading.Thread(target=download_img, args=(record,))
             download_img_threads.append(download_img_thread)
             download_img_thread.start()
         
