@@ -39,7 +39,7 @@ def download(url, path):
     with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    def download_images(record):
+    for record in data:
         chap_imgs = record['image_links']
         chap_name = record['chapter_name']
         chap_name = re.sub(r'[\/:*?"<>|]', ' ', chap_name)
@@ -63,15 +63,6 @@ def download(url, path):
 
         print("Đã tải xong", chap_name)
         sleep(0.5)
-
-    threads = []
-    for record in data:
-        thread = threading.Thread(target=download_images, args=(record,))
-        threads.append(thread)
-        thread.start()
-
-    for thread in threads:
-        thread.join()
 
 @app.route('/download', methods=['POST'])
 def download_thread():

@@ -1,5 +1,7 @@
 from tkinter import Tk, Label, Entry, Button, messagebox
+from tkinter.ttk import Progressbar
 from bs4 import BeautifulSoup
+from click import progressbar
 import cloudscraper
 import os
 from time import sleep
@@ -36,8 +38,12 @@ def download_comic():
 
         with open('E:/LT/Crawl (Python)/Data/{}.json'.format(comic_name), 'r', encoding='utf-8') as f:
             data = json.load(f)
+            
+        total_chapters = len(data)
+        progress_bar.config(maximum=total_chapters, value=0)
+        message_label.config(text="Đang tải...")    
 
-        def download_img(record) :
+        for index, record in enumerate(data, start=1):
             chap_imgs = record['image_links']
             chap_name = record['chapter_name']
             chap_name = re.sub(r'[\/:*?"<>|]', ' ', chap_name)
@@ -58,17 +64,10 @@ def download_comic():
                 with open(os.path.join(chap_path, filename), 'wb') as f:
                     f.write(response_img.content)
                 img_count += 1
+
+            progressbar.config(value=index)
             message_label.config(text="Đã tải xong " + chap_name) 
             sleep(0.5)
-
-        download_img_threads=[]
-        for record in data:
-            download_img_thread=threading.Thread(target=download_img, args=(record,))
-            download_img_threads.append(download_img_thread)
-            download_img_thread.start()
-        
-        for download_img_thread in download_img_threads:
-            download_img_thread.join()
 
         messagebox.showinfo("Download Complete", "Comic downloaded successfully!")
 
@@ -94,6 +93,9 @@ path_entry.pack()
 # Create download button
 download_button = Button(window, text="Download", command=download_comic)
 download_button.pack()
+
+progress_bar = Progressbar(window, mode="determinate")
+progress_bar.pack()
 
 message_label = Label(window, text="")
 message_label.pack()
