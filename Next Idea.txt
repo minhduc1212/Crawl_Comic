@@ -1,1 +1,5 @@
 Lưu các link dẫn tới json vào 1 file list json nếu ai muốn tải thì nhập link truyện rồi có comic_name dựa vào comic name dẫn tới link json của truyện đấy trên github
+
+5/9/2023: Thêm progress vào web app
+          thêm web truyện, tìm kiếm
+          tìm cách kết nối app với server

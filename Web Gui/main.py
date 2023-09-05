@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template
 from bs4 import BeautifulSoup
 import cloudscraper
 import os
@@ -10,12 +10,8 @@ import json
 import threading
 
 app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 def download(url, path):
+
     scraper = cloudscraper.create_scraper()
     ua = UserAgent()
     headers = {
@@ -63,16 +59,21 @@ def download(url, path):
 
         print("Đã tải xong", chap_name)
         sleep(0.5)
+        sleep(0.5)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/download', methods=['POST'])
 def download_thread():
     url = request.form.get('url')
     path = request.form.get('path')
+
     download_thread = threading.Thread(target=download, args=(url, path))
     download_thread.start()
     download_thread.join()
 
     return render_template('download.html')
-
 if __name__ == '__main__':
     app.run(port=8088)
