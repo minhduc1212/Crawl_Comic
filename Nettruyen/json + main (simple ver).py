@@ -11,10 +11,10 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers =   {
                 'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenmax.com/'
+                'Referer': 'https://www.nettruyenus.com/'
             }
 
-url="https://www.nettruyenmax.com/truyen-tranh/vu-xuyen-vat-ngu-89520"
+url="https://www.nettruyenus.com/truyen-tranh/vu-xuyen-vat-ngu-89520"
 response=scraper.get(url, headers=headers)
 soup=BeautifulSoup(response.text, "html.parser") 
 areas=soup.find_all('div', {'class':'col-xs-5 chapter'})

@@ -11,7 +11,7 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers =   {
                 'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenmax.com/'
+                'Referer': 'https://www.nettruyenus.com/'
             }
 
 url=input("Link Truyện: ", )

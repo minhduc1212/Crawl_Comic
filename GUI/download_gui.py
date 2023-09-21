@@ -20,7 +20,7 @@ def download_comic():
         ua = UserAgent()
         headers = {
             'User-Agent': ua.random,
-            'Referer': 'https://www.nettruyenmax.com/'
+            'Referer': 'https://www.nettruyenus.com/'
         }
 
         response = scraper.get(url, headers=headers)

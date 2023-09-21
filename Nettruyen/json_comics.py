@@ -12,9 +12,9 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers = {
     'User-Agent': ua.random,
-    'Referer': 'https://www.nettruyenmax.com/'
+    'Referer': 'https://www.nettruyenus.com/'
 }
-url = "https://www.nettruyenmax.com/?page={}"
+url = "https://www.nettruyenus.com/?page={}"
 
 with open('all_comics_links.json', 'w', encoding='utf-8') as f:
     for i in range(1, 596):

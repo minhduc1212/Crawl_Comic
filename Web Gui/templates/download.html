@@ -2,9 +2,56 @@
 <html>
 <head>
     <title>Download Completed</title>
+    <style>
+      h1 {
+        color: green;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      a {
+        color: blue;
+        font-size: 16px;
+        text-decoration: none;
+      }
+
+      .container {
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      a {
+        margin-bottom: 20px;
+      }
+    </style>
 </head>
 <body>
+  <div class="container">
     <h1>Download completed successfully</h1>
     <a href="/">Quay lại trang chủ</a>
+  </div>
+
+  <script>
+    function animateHeading() {
+      var heading = document.querySelector("h1");
+      heading.style.color = "green";
+      heading.style.fontWeight = "bold";
+
+      // Tạo một hiệu ứng chuyển động cho văn bản
+      var i = 0;
+      setInterval(function() {
+        i++;
+        heading.style.color = "rgb(0, " + i + ", 0)";
+      }, 100);
+    }
+
+    window.onload = animateHeading;
+  </script>
 </body>
 </html>

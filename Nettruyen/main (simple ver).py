@@ -10,10 +10,10 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers =   {
                 'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenmax.com/'
+                'Referer': 'https://www.nettruyenus.com/'
             }
 
-url="https://www.nettruyenmax.com/truyen-tranh/dai-phung-da-canh-nhan-556590"
+url="https://www.nettruyenus.com/truyen-tranh/dai-phung-da-canh-nhan-556590"
 response=scraper.get(url, headers=headers)
 soup=BeautifulSoup(response.text, "html.parser") 
 areas=soup.find_all('div', {'class':'col-xs-5 chapter'})
@@ -25,10 +25,10 @@ if not os.path.exists(path):
     os.makedirs(path)
 
 for i in range(1):
-    #chap_links = []
+    chap_links = []
     area = areas[i]
     link=area.find('a')
-    #chap_links.append(link['href'])
+    chap_links.append(link['href'])
 
     chap_names = []
     chap_name=area.get_text().strip()
@@ -40,7 +40,7 @@ for i in range(1):
         os.makedirs(chap_path)
         sleep(0.5)
 
-    #for chap_link in chap_links:
+    for chap_link in chap_links:
         chap_response=scraper.get(link, headers=headers)
         chap_soup=BeautifulSoup(chap_response.text, "html.parser")
         chap_imgs_div=chap_soup.find('div', {'class':'reading-detail box_doc'})

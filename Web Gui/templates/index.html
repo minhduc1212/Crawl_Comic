@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Comic Downloader</title>
+    <script>
+        function showDownloadingMessage()
+        {
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
     <style>
         body {
             display: flex;
@@ -53,23 +59,16 @@
 <body>
     <div class="container">
         <h1>Comic Downloader</h1>
-        <form action="/download" method="post">
+        <form action="/download" method="post" onsubmit="showDownloadingMessage()">
             <label for="url">URL:</label>
             <input type="text" name="url" id="url" required><br><br>
             <label for="path">Path:</label>
             <input type="text" name="path" id="path" required><br><br>
             <input type="submit" value="Download">
         </form>
+        <div>
+            <p id="message" style="display: none; text-align: center;">Downloading...</p>
+        </div>
     </div>
-    <div id="progress"></div>
-
-    {% if progress %}
-        <ul>
-            {% for message in progress %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    
 </body>
 </html>

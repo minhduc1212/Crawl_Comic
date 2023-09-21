@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thanh tìm kiếm</title>
+  <style>
+    #searchInput {
+      margin-bottom: 10px;
+    }
+
+    li {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm">
+  <ul id="list">
+    <li>bố</li>
+    <li>mẹ</li>
+    <li>má</li>
+    <li>ông</li>
+  </ul>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const list = document.getElementById('list');
+    const items = list.getElementsByTagName('li');
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        const text = item.innerText.toLowerCase();
+        const textWithoutDiacritics = removeDiacritics(text);
+
+        if (text.includes(searchTerm) || textWithoutDiacritics.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      }
+    });
+
+    // Hàm chuyển đổi từ có dấu thành từ không dấu
+    function removeDiacritics(text) {
+      return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+  </script>
+</body>
+</html>

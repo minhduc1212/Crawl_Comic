@@ -12,10 +12,10 @@ scraper = cloudscraper.create_scraper()
 ua = UserAgent()
 headers =   {
                 'User-Agent': ua.random,
-                'Referer': 'https://www.nettruyenmax.com/'
+                'Referer': 'https://www.nettruyenus.com/'
             }
 
-response=scraper.get('https://www.nettruyenmax.com/', headers=headers)
+response=scraper.get('https://www.nettruyenus.com/', headers=headers)
 soup=BeautifulSoup(response.text, "html.parser") 
 
 comic_link = (input("Link Truyện : ", ))

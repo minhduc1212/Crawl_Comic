@@ -13,7 +13,7 @@ def download():
     ua = UserAgent()
     headers =   {
                     'User-Agent': ua.random,
-                    'Referer': 'https://www.nettruyenmax.com/'
+                    'Referer': 'https://www.nettruyenus.com/'
                 }
 
     url=input("link Truyện : ", )

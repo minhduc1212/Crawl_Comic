@@ -13,13 +13,13 @@ while True:
     ua = UserAgent()
     headers =   {
                     'User-Agent': ua.random,
-                    'Referer': 'https://www.nettruyenmax.com/'
+                    'Referer': 'https://www.nettruyenus.com/'
                 }
 
     now = datetime.datetime.now()
     formatted_time = now.strftime("%d/%m/%Y %H:%M:%S")
 
-    response=scraper.get('https://www.nettruyenmax.com/', headers=headers)
+    response=scraper.get('https://www.nettruyenus.com/', headers=headers)
     soup=BeautifulSoup(response.text, "html.parser") 
 
     comic_links = [comic['href'] for comic in soup.find_all('a', {'class': 'jtip'})]
