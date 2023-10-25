@@ -59,8 +59,7 @@ def download(url, path):
 
         print("Đã tải xong", chap_name)
         sleep(0.5)
-        sleep(0.5)
-
+        
 @app.route('/')
 def index():
     return render_template('index.html')

@@ -3,3 +3,5 @@ Lưu các link dẫn tới json vào 1 file list json nếu ai muốn tải thì
 5/9/2023: Thêm progress vào web app
           thêm web truyện, tìm kiếm
           tìm cách kết nối app với server
+26/9/2023: Cần tích hợp code update và code tải 
+25/10/2023: web và app không cần file link json nx vì có thêm json ko ảnh hưởng đén tốc độ tải quá nhiều => tải json trc r từ json tải truyện rồi cuối cùng sẽ xóa file json đấy 
