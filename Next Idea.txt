@@ -7,4 +7,5 @@ Lưu các link dẫn tới json vào 1 file list json nếu ai muốn tải thì
 25/10/2023: web và app không cần file link json nx vì có thêm json ko ảnh hưởng đén tốc độ tải quá nhiều => tải json trc r từ json tải truyện rồi cuối cùng sẽ xóa file json đấy 
 11/11/2023: cần gì file json, ngáo mẹ r, lưu trong ram là xong mà má ơi
             trong tkinter thì có 2 phần: giao diện và code chạy => lý do mà lag là do giao diện và code chạy lần lượt từ trên xuống dưới => thread đưa code chạy downlaod vào một luồng kahcs với luồn giao diện
-            
+2/12/2023: Thêm nút browse path
+            Cần thêm các trường hợp ngoại lệ, có lỗi xảy ra
