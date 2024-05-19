@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from bs4 import BeautifulSoup
-import cloudscraper
+import requests
 import os
 from time import sleep
 from fake_useragent import UserAgent
@@ -12,14 +12,13 @@ import threading
 app = Flask(__name__)
 def download(url, path):
 
-    scraper = cloudscraper.create_scraper()
     ua = UserAgent()
     headers = {
         'User-Agent': ua.random,
         'Referer': 'https://www.nettruyenus.com/'
     }
 
-    response = scraper.get(url, headers=headers)
+    response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, "html.parser") 
     
     comic_name = soup.find('h1', {'class':'title-detail'}).text  
@@ -49,7 +48,7 @@ def download(url, path):
         for img_link in chap_imgs:
             img_link_fix = urljoin(url, img_link)
 
-            response_img = scraper.get(img_link_fix, headers=headers)
+            response_img = requests.get(img_link_fix, headers=headers)
 
             filename = f'{img_count:03}.jpg'
 

@@ -24,6 +24,7 @@ def download_comic_total(url, path):
                 "chapter_name": chap_name,
                 "image_links": []
             }
+
             chap_links = []
             chap_links.append(link['href'])
             for chap_link in chap_links:
@@ -32,7 +33,7 @@ def download_comic_total(url, path):
                 chap_imgs_div = chap_soup.find('div', {'class': 'reading-detail box_doc'})
                 chap_imgs = chap_imgs_div.find_all('img')
 
-                data_one["image_links"].extend([img.get('src') for img in chap_imgs])
+                data_one["image_links"].extend([img.get('data-src') for img in chap_imgs])
             data.append(data_one)
         return data
     
@@ -49,7 +50,6 @@ def download_comic_total(url, path):
             img_link_fix = urljoin(url, img_link)
             response_img = requests.get(img_link_fix, headers=headers)
             filename = f'{img_count:03}.jpg'
-
             with open(os.path.join(chap_path, filename), 'wb') as f:
                 f.write(response_img.content)
                 f.close()
@@ -79,7 +79,7 @@ def download_comic_total(url, path):
     ua = UserAgent()
     headers = {
         'User-Agent': ua.random,
-        'Referer': 'https://www.nettruyenee.com/'
+        'Referer': 'https://www.nettruyenxx.com/'
     }
 
     response = requests.get(url, headers=headers)
@@ -136,7 +136,6 @@ download_button.grid(row=2, column=0, columnspan=3, pady=10)
 # Button để chọn đường dẫn
 path_button = Button(window, text="Browse", command=select_path)
 path_button.grid(row=1, column=3, padx=10, pady=5)
-
 
 # Progress bar
 progress_bar = Progressbar(window, mode="determinate")

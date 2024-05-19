@@ -9,3 +9,4 @@ Lưu các link dẫn tới json vào 1 file list json nếu ai muốn tải thì
             trong tkinter thì có 2 phần: giao diện và code chạy => lý do mà lag là do giao diện và code chạy lần lượt từ trên xuống dưới => thread đưa code chạy downlaod vào một luồng kahcs với luồn giao diện
 2/12/2023: Thêm nút browse path
             Cần thêm các trường hợp ngoại lệ, có lỗi xảy ra
+12/5/2024: Thêm các nettruyenfake và referer dựa trên link

@@ -21,6 +21,7 @@
 // @match           https://*.hamtruyen.com/*
 // @match           https://*.hamtruyenmoi.com/*
 // @match           https://*.nettruyenss.com/*
+// @match           https://*.nettruyenff.com/*
 // @match           https://*.a3manga.com/*
 // @match           https://*.a3mnga.com/*
 // @match           http://truyentranhtuan.com/*
@@ -1362,6 +1363,7 @@ jQuery(function ($) {
     case 'www.nettruyenpro.com':
     case 'www.nettruyengo.com':
     case 'www.nettruyenmoi.com':
+    case 'www.nettruyenff.com':
     case 'www.nettruyenmax.com':
       configs = {
         link: '#nt_listchapter .chapter a',
