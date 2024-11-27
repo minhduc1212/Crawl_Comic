@@ -1,8 +1,8 @@
 import requests
 
-url = "https://cdnntx.com/nettruyen/cbunu-triangle-and-circle/3/2.jpg"
+url = "https://s3.mideman.com/file/mideman/cmanga/chapter/518696/0.png?v=2"
 headers = {
-    'Referer': 'https://nettruyenxx.com/',
+    'Referer': 'https://nettruyendie.com/',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
 }
 response = requests.get(url, headers=headers)
