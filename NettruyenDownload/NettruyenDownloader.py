@@ -33,7 +33,9 @@ def download_comic_total(url, path):
                 chap_imgs_div = chap_soup.find('div', {'class': 'reading-detail box_doc'})
                 chap_imgs = chap_imgs_div.find_all('img')
 
-                data_one["image_links"].extend([img.get('data-src') for img in chap_imgs])
+                for img in chap_imgs:
+                    if 'data-src' in img.attrs:
+                        data_one["image_links"].append(img['data-src'])
             data.append(data_one)
         return data
     
@@ -79,7 +81,7 @@ def download_comic_total(url, path):
     ua = UserAgent()
     headers = {
         'User-Agent': ua.random,
-        'Referer': 'https://www.nettruyenxx.com/'
+        'Referer': 'https://www.nettruyenww.com/'
     }
 
     response = requests.get(url, headers=headers)
