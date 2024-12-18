@@ -9,9 +9,12 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from time import sleep
 
+
 def download_comic_total(url, path):
+    data = []  
     def get_data(areas):
-        data = []
+        error=False
+        error_chapter = []
         message_label.config(text="Đang lấy data...")
         for area in areas:
             link = area.find('a')
@@ -31,13 +34,26 @@ def download_comic_total(url, path):
                 chap_response = requests.get(chap_link, headers=headers)
                 chap_soup = BeautifulSoup(chap_response.text, "html.parser")
                 chap_imgs_div = chap_soup.find('div', {'class': 'reading-detail box_doc'})
-                chap_imgs = chap_imgs_div.find_all('img')
+                try:
+                    chap_imgs = chap_imgs_div.find_all('img')
+                except:
+                    try:
+                        sleep(1)
+                        chap_response = requests.get(chap_link, headers=headers)
+                        chap_soup = BeautifulSoup(chap_response.text, "html.parser")
+                        chap_imgs = chap_soup.find_all('img')
+                        continue
+                    except:
+                        error_chapter.append(data_one)
+                        error = True
+                        print('Error', chap_link)
+                        continue
 
                 for img in chap_imgs:
                     if 'data-src' in img.attrs:
                         data_one["image_links"].append(img['data-src'])
             data.append(data_one)
-        return data
+        return data, error_chapter, error
     
     def progress_start(total_chapters):
         progress_bar.config(maximum=total_chapters, value=0)
@@ -94,14 +110,11 @@ def download_comic_total(url, path):
         os.makedirs(os.path.join(path, comic_name))
 
     areas = soup.find_all('div', {'class': 'col-xs-5 chapter'})
-    data = get_data(areas)
-    try:
-        download_comic(data, comic_name)
-    except:
-        messagebox.showerror("Error", "Download failed!", "Download Again", icon='error')
-        sleep(5)
-        #Tải lại chương lỗi
-        download_comic(data, comic_name)
+    data, error_chapter, error = get_data(areas)
+    download_comic(data, comic_name)
+    if error:
+        download_comic(error_chapter, comic_name)
+        
     
 def select_path():
     path = filedialog.askdirectory()
