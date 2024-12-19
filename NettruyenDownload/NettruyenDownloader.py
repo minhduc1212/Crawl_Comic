@@ -109,7 +109,8 @@ def download_comic_total(url, path):
     if not os.path.exists(os.path.join(path, comic_name)):
         os.makedirs(os.path.join(path, comic_name))
 
-    areas = soup.find_all('div', {'class': 'col-xs-5 chapter'})
+    ul = soup.find('ul', {'style': 'display: block'})
+    areas = ul.find_all('div', {'class': 'col-xs-5 chapter'})
     data, error_chapter, error = get_data(areas)
     download_comic(data, comic_name)
     if error:
